@@ -6,7 +6,7 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *curr, *head = list;
+	listint_t *ptr, *curr, *head = list;
 
 	if (list == NULL)
 		return (0);
@@ -15,6 +15,13 @@ int check_cycle(listint_t *list)
 	{
 		if (curr->next == head)
 			return (1);
+		ptr = curr;
+		while (ptr != NULL)
+		{
+			if (ptr->next == curr)
+				return (1);
+			ptr = ptr->next;
+		}
 		curr = curr->next;
 	}
 	return (0);
