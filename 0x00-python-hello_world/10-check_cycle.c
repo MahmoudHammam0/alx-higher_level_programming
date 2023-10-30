@@ -13,15 +13,9 @@ int check_cycle(listint_t *list)
 	curr = head;
 	while (curr != NULL)
 	{
-		if (curr->next == head)
-			return (1);
 		ptr = curr;
-		while (ptr != NULL)
-		{
-			if (ptr->next == curr)
-				return (1);
-			ptr = ptr->next;
-		}
+		if (curr->next == head || curr->next == ptr)
+			return (1);
 		curr = curr->next;
 	}
 	return (0);
