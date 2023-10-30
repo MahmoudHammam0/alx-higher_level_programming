@@ -8,7 +8,7 @@ int check_cycle(listint_t *list)
 {
 	listint_t *ptr, *curr;
 
-	if (!list)
+	if (!list || !list->next)
 		return (0);
 	curr = list->next;
 	ptr = curr->next;
