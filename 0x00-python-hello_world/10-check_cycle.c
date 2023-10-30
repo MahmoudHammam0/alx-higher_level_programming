@@ -11,8 +11,8 @@ int check_cycle(listint_t *list)
 	if (list == NULL || list->next == NULL)
 		return (0);
 	curr = list->next;
-	ptr = list->next->next;
-	while (curr != NULL && ptr != NULL)
+	ptr = curr->next;
+	while (curr && ptr && ptr->next)
 	{
 		if (curr == ptr)
 			return (1);
