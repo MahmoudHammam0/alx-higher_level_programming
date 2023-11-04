@@ -1,6 +1,54 @@
 #include "lists.h"
-#include <stdlib.h>
+void list_rev(listint_t **head)
+{
+	listint_t *link = NULL, *curr = *head, *back = NULL;
+
+	while (curr != NULL)
+	{
+		link = curr->next;
+		curr->next = back;
+		back = curr;
+		curr = link;
+	}
+	*head = back;
+}
 int is_palindrome(listint_t **head)
+{
+	listint_t *ptr1 = *head, *ptr2 = NULL, t = *head, y = *head;
+
+	if (!*head || !(*head)->next)
+		return (1);
+	while (1)
+	{
+		t = t->next->next;
+		if (t == NULL)
+		{
+			ptr2 = y->next;
+			break;
+		}
+		if (t->next == NULL)
+		{
+			ptr2 = y->next->next;
+			break;
+		}
+		y = y->next;
+	}
+	list_rev(&ptr2);
+	while (ptr1 && ptr2)
+	{
+		if (ptr1->n == ptr2->n)
+		{
+			ptr1 = ptr1->next;
+			ptr2 = ptr2->next;
+		}
+		else
+			return (0);
+	}
+	if (ptr2 == NULL)
+		return (1);
+	return (0);
+}
+int is_palindrome2(listint_t **head)
 {
 	listint_t *ptr;
 	int count = 0, *arr, idx = 0, i, j;
