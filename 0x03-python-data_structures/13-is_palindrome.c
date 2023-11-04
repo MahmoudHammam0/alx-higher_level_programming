@@ -15,9 +15,10 @@ int is_palindrome(listint_t **head)
 		ptr = ptr->next;
 	}
 	length = idx;
+	idx--;
 	for (i = 0; i < length / 2; i++, idx--)
 	{
-		if (arr[i] != arr[idx - 1])
+		if (arr[i] != arr[idx])
 			return (0);
 	}
 	return (1);
