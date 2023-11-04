@@ -1,6 +1,6 @@
-#!/usr/bin/pyton3
+#!/usr/bin/python3
 def multiple_returns(sentence):
-    if sentence == None:
+    if sentence == "":
         a = None
     else:
         a = sentence[0]
