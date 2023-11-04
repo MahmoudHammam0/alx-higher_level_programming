@@ -2,7 +2,7 @@
 int is_palindrome(listint_t **head)
 {
 	int i, idx = 0, length;
-	int arr[1900];
+	int arr[2000];
 	listint_t *ptr = *head;
 
 	if (*head == NULL || (*head)->next == NULL)
