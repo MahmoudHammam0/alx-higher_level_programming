@@ -21,9 +21,9 @@ int is_palindrome(listint_t **head)
 		idx++;
 		ptr = ptr->next;
 	}
-	for (i = 0; i < j; i++)
+	for (i = 0; i <= j; i++)
 	{
-		for (j = count - 1; j > 0; j++)
+		for (j = count - 1; j >= 0; j++)
 		{
 			if (arr[i] != arr[j])
 				return (0);
