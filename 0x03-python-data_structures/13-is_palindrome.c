@@ -15,7 +15,6 @@ int is_palindrome(listint_t **head)
 		idx++;
 		ptr = ptr->next;
 	}
-	arr[idx] = NULL;
 	length = idx;
 	for (i = 0; i < length / 2; i++, idx--)
 	{
