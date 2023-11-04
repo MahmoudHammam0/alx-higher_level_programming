@@ -1,28 +1,25 @@
 #include "lists.h"
 int is_palindrome(listint_t **head)
 {
-	int y, x = 0, n;
+	int i, idx = 0, length;
 	int arr[2047];
-	listint_t *tmp = *head;
+	listint_t *ptr = *head;
 
-	if (!head)
-	{
+	if (head == NULL)
 		return (0);
-	}
-	while (tmp)
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
+	while (ptr != NULL)
 	{
-		arr[x] = tmp->n;
-		x++;
-		tmp = tmp->next;
+		arr[idx] = ptr->n;
+		idx++;
+		ptr = ptr->next;
 	}
-	n = x;
-	for (y = 0; y < n / 2; y++)
+	length = idx;
+	for (i = 0; i < length / 2; i++, idx--)
 	{
-		if (arr[y] != arr[x - 1])
-		{
+		if (arr[i] != arr[idx - 1])
 			return (0);
-		}
-		x--;
 	}
 	return (1);
 }
