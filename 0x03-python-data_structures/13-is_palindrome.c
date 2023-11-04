@@ -3,7 +3,8 @@
 /**
  * is_palindrome - checks if a singly linked list is a palindrome.
  * @head: pointer to head node
- * Return: 1 in success and 0 in failure*/
+ * Return: 1 in success and 0 in failure
+ */
 int is_palindrome(listint_t **head)
 {
 	listint_t *ptr;
