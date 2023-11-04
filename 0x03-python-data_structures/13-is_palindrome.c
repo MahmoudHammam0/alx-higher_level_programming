@@ -1,52 +1,29 @@
 #include "lists.h"
 #include <stdlib.h>
-listint_t *reverse_list(listint_t **head)
-{
-	listint_t *curr, *prev, *h;
-
-	h = *head;
-	curr = h->next;
-	prev = h;
-	h->next = NULL;
-	while (curr != NULL)
-	{
-		h = curr;
-		curr = curr->next;
-		h->next = prev;
-		prev = h;
-	}
-	return (h);
-}
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptr, *ptr2, *cp, *rev;
+	listint_t *ptr;
+	int count = 0, *arr, idx = 0, i, j;
 
-	if (!*head || !(*head)->next)
-		return (1);
 	ptr = *head;
 	while (ptr != NULL)
 	{
-		if (ptr->n == ptr->next->n)
-			break;
 		ptr = ptr->next;
+		count++;
 	}
-	ptr2 = ptr->next;
-	rev = reverse_list(&ptr2);
-	ptr->next = rev;
+	arr = malloc(sizeof(int) * count);
 	ptr = *head;
-	cp = *head;
 	while (ptr != NULL)
 	{
-		if (ptr->n == cp->n)
-			break;
+		arr[idx] = ptr->n;
+		idx++;
 		ptr = ptr->next;
 	}
-	while (ptr && cp)
+	for (i = 0, j = count - 1; i < count / 2; i++, j--)
 	{
-		if (ptr->n != cp->n)
+		if (arr[i] != arr[j])
 			return (0);
-		ptr = ptr->next;
-		cp = cp->next;
 	}
+	free(arr);
 	return (1);
 }
