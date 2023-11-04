@@ -1,36 +1,52 @@
 #include "lists.h"
 #include <stdlib.h>
-/**
- * is_palindrome - checks if a singly linked list is a palindrome.
- * @head: pointer to head node
- * Return: 1 in success and 0 in failure
- */
+listint_t *reverse_list(listint_t **head)
+{
+	listint_t *curr, *prev, *h;
+
+	h = *head;
+	curr = h->next;
+	prev = h;
+	h->next = NULL;
+	while (curr != NULL)
+	{
+		h = curr;
+		curr = curr->next;
+		h->next = prev;
+		prev = h;
+	}
+	return (h);
+}
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptr;
-	int count = 0, idx = 0, i;
+	listint_t *ptr, *ptr2, *cp, *rev;
 
-	if (!head || !*head)
+	if (!*head || !(*head)->next)
 		return (1);
 	ptr = *head;
 	while (ptr != NULL)
 	{
+		if (ptr->n == ptr->next->n)
+			break;
 		ptr = ptr->next;
-		count++;
 	}
+	ptr2 = ptr->next;
+	rev = reverse_list(&ptr2);
+	ptr->next = rev;
 	ptr = *head;
-	int arr[count];
-
+	cp = *head;
 	while (ptr != NULL)
 	{
-		arr[idx] = ptr->n;
-		idx++;
+		if (ptr->n == cp->n)
+			break;
 		ptr = ptr->next;
 	}
-	for (i = 0; i < (count / 2); i++)
+	while (ptr && cp)
 	{
-		if (arr[i] != arr[count - i - 1])
+		if (ptr->n != cp->n)
 			return (0);
+		ptr = ptr->next;
+		cp = cp->next;
 	}
 	return (1);
 }
