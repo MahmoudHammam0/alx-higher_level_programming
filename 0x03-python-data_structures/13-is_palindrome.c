@@ -1,6 +1,6 @@
 #include "lists.h"
 #include <stdlib.h>
-void list_rev(listint_t **head)
+/**void list_rev(listint_t **head)
 {
 	listint_t *link = NULL, *curr = *head, *back = NULL;
 
@@ -40,8 +40,8 @@ int is_palindrome(listint_t **head)
 	if (ptr2 == NULL)
 		return (1);
 	return (0);
-}
-int is_palindrome2(listint_t **head)
+}*/
+int is_palindrome(listint_t **head)
 {
 	listint_t *ptr;
 	int count = 0, *arr, idx = 0, i, j;
@@ -72,6 +72,10 @@ int is_palindrome2(listint_t **head)
 			return (0);
 		}
 	}
-	free(arr);
-	return (1);
+	if (arr[i] == arr[j])
+	{
+		free(arr);
+		return (1);
+	}
+	return (0);
 }
