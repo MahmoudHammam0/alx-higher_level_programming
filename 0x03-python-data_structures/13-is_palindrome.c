@@ -30,19 +30,12 @@ int is_palindrome(listint_t **head)
 	}
 	for (i = 0, j = count - 1; i < count / 2; i++, j--)
 	{
-		if (arr[i] == arr[j])
-			continue;
-		else
+		if (arr[i] != arr[j])
 		{
 			free(arr);
 			return (0);
 		}
 	}
-	if (i == j || i == j + 1)
-	{
-		free(arr);
-		return (1);
-	}
 	free(arr);
-	return (0);
+	return (1);
 }
