@@ -18,9 +18,9 @@ int is_palindrome(listint_t **head)
 		ptr = ptr->next;
 		count++;
 	}
+	ptr = *head;
 	int arr[count];
 
-	ptr = *head;
 	while (ptr != NULL)
 	{
 		arr[idx] = ptr->n;
