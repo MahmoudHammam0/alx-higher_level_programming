@@ -1,19 +1,13 @@
 #include "lists.h"
 int is_palindrome(listint_t **head)
 {
-	int i, idx = 0, count = 0, length;
+	int i, idx = 0, length;
 	int *arr;
 	listint_t *ptr = *head;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	ptr = *head;
-	while (ptr != NULL)
-	{
-		ptr = ptr->next;
-		count++;
-	}
-	arr = malloc(sizeof(int) * count);
+	arr = malloc(sizeof(int) * 2000);
 	ptr = *head;
 	while (ptr != NULL)
 	{
@@ -21,6 +15,7 @@ int is_palindrome(listint_t **head)
 		idx++;
 		ptr = ptr->next;
 	}
+	arr[idx] = NULL;
 	length = idx;
 	for (i = 0; i < length / 2; i++, idx--)
 	{
