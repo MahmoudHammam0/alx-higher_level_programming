@@ -14,7 +14,7 @@ void list_rev(listint_t **head)
 }
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptr1 = *head, *ptr2 = NULL, t = *head, y = *head;
+	listint_t *ptr1 = *head, *ptr2 = NULL, *t = *head, *y = *head;
 
 	if (!*head || !(*head)->next)
 		return (1);
