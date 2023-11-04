@@ -2,12 +2,11 @@
 int is_palindrome(listint_t **head)
 {
 	int i, idx = 0, length;
-	int *arr;
+	int arr[1750];
 	listint_t *ptr = *head;
 
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
-	arr = malloc(sizeof(int) * 2000);
 	ptr = *head;
 	while (ptr != NULL)
 	{
@@ -19,11 +18,7 @@ int is_palindrome(listint_t **head)
 	for (i = 0; i < length / 2; i++, idx--)
 	{
 		if (arr[i] != arr[idx - 1])
-		{
-			free(arr);
 			return (0);
-		}
 	}
-	free(arr);
 	return (1);
 }
