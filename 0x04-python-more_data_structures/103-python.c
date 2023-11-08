@@ -1,5 +1,10 @@
 #include <stdio.h>
 #include <Python.h>
+/**
+ * print_python_bytes - print python info about bytes
+ * @p: object
+ * Return: Nothing
+ */
 void print_python_bytes(PyObject *p)
 {
 	long int length, idx, max;
@@ -20,13 +25,18 @@ void print_python_bytes(PyObject *p)
 	else
 		max = length + 1;
 	printf("  first %ld bytes:", max);
-	for (idx = 0; i < max; idx++)
+	for (idx = 0; idx < max; idx++)
 		if (str[idx] >= 0)
 			printf(" %02x", str[idx]);
 		else
 			printf(" %02x", 256 + str[idx]);
 	printf("\n");
 }
+/**
+ * print_python_list - print python list
+ * @p: object
+ * Return: Nothing
+ */
 void print_python_list(PyObject *p)
 {
 	long int length, idx;
