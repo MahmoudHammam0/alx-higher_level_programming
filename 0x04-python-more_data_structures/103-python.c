@@ -7,10 +7,10 @@
  */
 void print_python_bytes(PyObject *p)
 {
-	long int length, idx = 0, max;
+	long int length = ((PyVarObject *)(p))->ob_size;
+	long int idx = 0, max;
 	char *str = ((PyBytesObject *)p)->ob_sval;
 
-	length = ((PyVarObject *)(p))->ob_size;
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
 	{
