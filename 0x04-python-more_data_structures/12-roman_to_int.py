@@ -6,8 +6,9 @@ def roman_to_int(roman_string):
                'C': 100, 'D': 500, 'M': 1000}
     num = 0
     for x in range(len(roman_string)):
-        if x > 0 and my_dict[roman_string[x]] > my_dict[roman_string[x - 1]]:
-            num += my_dict[roman_string[x]] - 2 * my_dict[roman_string[x - 1]]
-        else:
-            num += my_dict[roman_string[x]]
+        for key, value in my_dict:
+            if x > 0 and value > my_dict[roman_string[x - 1]]:
+                num += value - 2 * my_dict[roman_string[x - 1]]
+            else:
+                num += value
     return num
