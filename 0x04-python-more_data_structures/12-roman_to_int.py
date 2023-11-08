@@ -10,4 +10,4 @@ def roman_to_int(roman_string):
             num += my_dict[roman_string[x]] - 2 * my_dict[roman_string[x - 1]]
         else:
             num += my_dict[roman_string[x]]
-    return result
+    return num
