@@ -8,10 +8,9 @@
 void print_python_bytes(PyObject *p)
 {
 	long int length, idx = 0, max;
-	char *str;
+	char *str = ((PyBytesObject *)p)->ob_sval;
 
 	length = ((PyVarObject *)(p))->ob_size;
-	str = ((PyBytesObject *)p)->ob_sval;
 	printf("[.] bytes object info\n");
 	if (!PyBytes_Check(p))
 	{
