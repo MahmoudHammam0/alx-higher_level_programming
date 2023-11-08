@@ -11,7 +11,7 @@ def roman_to_int(roman_string):
                 if roman_string[x] == i:
                     num += j
                     if roman_string[x] == 'I':
-                        if (x + 1) < len(roman_string):
+                        if (x + 1) <= len(roman_string):
                             if (roman_string[x + 1] == 'X'
                                     or roman_string[x + 1] == 'V'):
                                 num -= 2
