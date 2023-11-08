@@ -52,7 +52,8 @@ void print_python_list(PyObject *p)
 	while (idx < length)
 	{
 		ptr = ((PyListObject *)p)->ob_item[idx];
-		printf("Element %ld: %s\n", idx, ((ptr)->ob_type)->tp_name);
+		printf("Element %ld: ", idx);
+		printf("%s\n", ((ptr)->ob_type)->tp_name);
 		if (PyBytes_Check(ptr))
 			print_python_bytes(ptr);
 		idx++;
