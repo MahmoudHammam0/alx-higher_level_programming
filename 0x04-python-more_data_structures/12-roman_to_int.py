@@ -16,6 +16,6 @@ def roman_to_int(roman_string):
                                     or roman_string[x + 1] == 'V'):
                                 num -= 2
                     break
-        if (num > 3999):
-            return (0)
+            if (num == 0):
+                return (0)
         return (num)
