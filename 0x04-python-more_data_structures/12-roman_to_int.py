@@ -7,11 +7,11 @@ def roman_to_int(roman_string):
     else:
         num = 0
         for x in range(len(roman_string)):
-            for i, j in my_dictionary.items():
-                if roman_string[x] == i:
-                    num += j
+            for key, value in my_dictionary.items():
+                if roman_string[x] == key:
+                    num += value
                     if roman_string[x] == 'I':
-                        if (x + 1) <= len(roman_string):
+                        if (x + 1) < len(roman_string):
                             if (roman_string[x + 1] == 'X'
                                     or roman_string[x + 1] == 'V'):
                                 num -= 2
