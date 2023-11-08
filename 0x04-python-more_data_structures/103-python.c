@@ -7,7 +7,7 @@
  */
 void print_python_bytes(PyObject *p)
 {
-	long int length, idx, max;
+	long int length, idx = 0, max;
 	char *str;
 
 	printf("[.] bytes object info\n");
@@ -25,11 +25,14 @@ void print_python_bytes(PyObject *p)
 	else
 		max = length + 1;
 	printf("  first %ld bytes:", max);
-	for (idx = 0; idx < max; idx++)
+	while (idx < max)
+	{
 		if (str[idx] >= 0)
 			printf(" %02x", str[idx]);
 		else
 			printf(" %02x", 256 + str[idx]);
+		idx++;
+	}
 	printf("\n");
 }
 /**
@@ -40,7 +43,7 @@ void print_python_bytes(PyObject *p)
 void print_python_list(PyObject *p)
 {
 	PyListObject *temp;
-	long int length, idx;
+	long int length, idx = 0;
 	PyObject *ptr;
 
 	length = ((PyVarObject *)(p))->ob_size;
@@ -48,11 +51,12 @@ void print_python_list(PyObject *p)
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %ld\n", length);
 	printf("[*] Allocated = %ld\n", temp->allocated);
-	for (idx = 0; idx < length; idx++)
+	while (idx < length)
 	{
 		ptr = ((PyListObject *)p)->ob_item[idx];
 		printf("Element %ld: %s\n", idx, ((ptr)->ob_type)->tp_name);
 		if (PyBytes_Check(ptr))
 			print_python_bytes(ptr);
+		idx++;
 	}
 }
