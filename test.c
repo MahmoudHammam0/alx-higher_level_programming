@@ -7,6 +7,5 @@ int main(int argc, char *argv[])
 	char *push[] = {"/usr/bin/git", "push", NULL};
 	execve(add[0], add, NULL);
 	execve(comm[0], comm, NULL);
-	execve(push[0], push, NULL);
 	return (0);
 }
