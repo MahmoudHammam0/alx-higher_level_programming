@@ -8,9 +8,6 @@ class Square:
         """intialization"""
         if (type(size) is not int):
             raise TypeError("size must be an integer")
-        if ((type(position) is not tuple) or (len(position) != 2)
-                or position[0] < 0 or position[1] < 0):
-            raise TypeError("position must be a tuple of 2 positive integers")
         if (size < 0):
             raise ValueError("size must be >= 0")
         else:
@@ -35,7 +32,13 @@ class Square:
     @property
     def position(self):
         """getter method for position"""
-        return (self.__position)
+        if (type(self.__position) is tuple and len(self.__position) == 2):
+            if (type(self.__position[0]) is int
+                    and type(self.__position[1]) is int):
+                if (self.__position[0] >= 0 and self.__position[1] >= 0):
+                    return (self.__position)
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
 
     @position.setter
     def position(self, value):
