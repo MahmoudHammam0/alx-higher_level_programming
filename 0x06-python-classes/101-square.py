@@ -67,13 +67,12 @@ class Square:
         """printing square"""
         new_string = ""
         if (self.__size == 0):
-            new_string += "\n"
+            new_string = "\n"
             return (new_string)
         else:
+            for n in range(self.__position[1]):
+                new_string += "\n"
             for i in range(self.__size):
-                if i == 0:
-                    for n in range(self.__position[1]):
-                        new_string += "\n"
                 for x in range(self.__position[0]):
                     new_string += " "
                 for j in range(self.__size):
