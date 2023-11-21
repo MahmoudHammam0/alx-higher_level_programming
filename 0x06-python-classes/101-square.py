@@ -47,7 +47,7 @@ class Square:
         res = (self.__size) ** 2
         return (res)
 
-    def print_mthod(self):
+    def print_method(self):
         """printing square"""
         new_string = ""
         if (not self.__size):
