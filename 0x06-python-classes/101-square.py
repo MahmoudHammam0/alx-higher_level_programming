@@ -49,17 +49,19 @@ class Square:
 
     def my_print(self):
         """printing square"""
+        string = ""
         if (not self.__size):
-            print()
+            string += "\n"
         else:
             for n in range(self.__position[1]):
-                print()
+                string += "\n"
             for i in range(self.__size):
                 for x in range(self.__position[0]):
-                    print(" ", end='')
+                    string += " "
                 for j in range(self.__size):
-                    print("#", end='')
-                print()
+                    string += "#"
+                string += "\n"
+        print(string, end="")
 
     def __str__(self):
         """print square class"""
