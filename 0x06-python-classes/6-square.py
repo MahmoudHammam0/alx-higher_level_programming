@@ -8,6 +8,8 @@ class Square:
         """intialization"""
         if (type(size) is not int):
             raise TypeError("size must be an integer")
+        if (type(position) is not tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
         if (size < 0):
             raise ValueError("size must be >= 0")
         else:
