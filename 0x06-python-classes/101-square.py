@@ -70,4 +70,4 @@ class Square:
 
     def __str__(self):
         """print square class"""
-        return (self.print_method()[:-1])
+        return (self.my_print)
