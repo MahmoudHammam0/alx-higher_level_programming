@@ -6,13 +6,19 @@ class Square:
     """class square with private attribute size"""
     def __init__(self, size=0, position=(0, 0)):
         """intialization"""
+        if (type(self.__position) is tuple and len(self.__position) == 2):
+            if (type(self.__position[0]) is int
+                    and type(self.__position[1]) is int):
+                if (self.__position[0] >= 0 and self.__position[1] >= 0):
+                    self.__position = position
+        else:
+            raise TypeError("position must be a tuple of 2 positive integers")
         if (type(size) is not int):
             raise TypeError("size must be an integer")
         if (size < 0):
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-            self.__position = position
 
     @property
     def size(self):
