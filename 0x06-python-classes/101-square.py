@@ -47,27 +47,32 @@ class Square:
         res = (self.__size) ** 2
         return (res)
 
-    def print_method(self):
+    def my_print(self):
         """printing square"""
-        new_string = ""
         if (not self.__size):
-            new_string = "\n"
-            return (new_string)
+            print()
         else:
             for n in range(self.__position[1]):
-                new_string += "\n"
+                print()
             for i in range(self.__size):
                 for x in range(self.__position[0]):
-                    new_string += " "
+                    print(" ", end='')
                 for j in range(self.__size):
-                    new_string += "#"
-                new_string += "\n"
-            return (new_string)
-
-    def my_print(self):
-        """print the square with character '#' """
-        print(self.print_method(), end='')
+                    print("#", end='')
+                print()
 
     def __str__(self):
         """print square class"""
-        self.my_print()
+        new_str = ""
+        if (not self.__size):
+            return ("\n")
+        else:
+            for n in range(self.__position[1]):
+                new_str += "\n"
+            for i in range(self.__size):
+                for x in range(self.__position[0]):
+                    new_str += " "
+                for j in range(self.__size):
+                    new_str += "#"
+                new_str += "\n"
+        return (new_str[:-1])
