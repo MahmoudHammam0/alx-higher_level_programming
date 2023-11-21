@@ -40,19 +40,19 @@ class SinglyLinkedList:
     """defines a singly linked list"""
     def __init__(self):
         """intialization"""
-        self.__head = None
+        self.head = None
 
     def sorted_insert(self, value):
         """inserts a new Node into sorted list"""
         node = Node(value)
-        if not self.__head:
-            self.__head = node
+        if not self.head:
+            self.head = node
             return
-        if value < self.__head.data:
-            node.next_node = self.__head
-            self.__head = node
+        if value < self.head.data:
+            node.next_node = self.head
+            self.head = node
             return
-        ptr = self.__head
+        ptr = self.head
         while ptr.next_node and ptr.next_node.data < value:
             ptr = ptr.next_node
         if ptr.next_node:
@@ -61,7 +61,7 @@ class SinglyLinkedList:
 
     def __str__(self):
         """print the list to stdout"""
-        ptr = self.__head
+        ptr = self.head
         new_string = ""
         while ptr:
             new_string += str(ptr.data) + "\n"
