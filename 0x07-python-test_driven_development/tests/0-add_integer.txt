@@ -37,6 +37,12 @@ Test case (negative float and int):
 -50
 
 
+Test case (negative int and float):
+-----------------------------------
+>>> add_integer(-50, 20.256)
+-30
+
+
 Test case (a = string argument):
 --------------------------------
 >>> add_integer("Hello", 2)
