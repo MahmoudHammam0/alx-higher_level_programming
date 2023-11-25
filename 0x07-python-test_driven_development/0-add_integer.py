@@ -1,8 +1,8 @@
 #!/usr/python3
 '''
-this module contains a simple int addition function
-they must be integers or floats otherwise raise TypeError
-return the sum of two argumetns a and b
+
+module for add_integer function
+
 '''
 
 
