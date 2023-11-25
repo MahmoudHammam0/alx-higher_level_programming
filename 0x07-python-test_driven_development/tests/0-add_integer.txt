@@ -91,7 +91,7 @@ Traceback (most recent call last):
 TypeError: a must be an integer
 
 
-Test case (more than one argument):
+Test case (more than two argument):
 -----------------------------------
 >>> add_integer(1, 1, 3)
 Traceback (most recent call last):
