@@ -6,7 +6,7 @@ First importing the module:
 >>> add_integer = __import__('0-add_integer').add_integer
 
 
-Test case (positive ints):
+Test case (ints):
 --------------------------
 >>> add_integer(1, 1)
 2
@@ -22,6 +22,12 @@ Test case (floats):
 -------------------
 >>> add_integer(2.5, 3.7)
 5
+
+
+Test case (negative floats):
+---------------------------------------
+>>> add_integer(-20.127, -50.65)
+-70
 
 
 Test case (a = string argument):
@@ -62,7 +68,17 @@ Traceback (most recent call last):
 TypeError: add_integer() missing 1 required positional argument: 'a'
 
 
-Test case (adding two negative floats):
----------------------------------------
->>> add_integer(-20.127, -50.65)
--70
+Test case (tuple argument):
+---------------------------
+>>> add_integer((0, 0))
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+
+Test case (dictionary argument):
+--------------------------------
+>>> add_integer({})
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
