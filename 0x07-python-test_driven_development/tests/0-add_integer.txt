@@ -2,6 +2,7 @@ The '0-add_integer' test module
 ================================
 Using 'add_integer' function
 -----------------------------
+
 First importing the module:
 >>> add_integer = __import__('0-add_integer').add_integer
 
@@ -28,6 +29,12 @@ Test case (negative floats):
 ---------------------------------------
 >>> add_integer(-20.127, -50.65)
 -70
+
+
+Test case (negative float and int):
+-----------------------------------
+>>> add_integer(-100.75, 50)
+-50
 
 
 Test case (a = string argument):
