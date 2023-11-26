@@ -55,6 +55,6 @@ class TestMaxInteger(unittest.TestCase):
         '''list of strings'''
         self.assertEqual(max_integer(["say", "my", "name"]), "say")
 
+
 if __name__ == "__main__":
     unittest.main()
-
