@@ -78,7 +78,6 @@ def recursive_func(r_board, row, q, res):
             tmp_board[row][c] = "Q"
             x_cells(tmp_board, row, c)
             res = recursive_func(tmp_board, row + 1, q + 1, res)
-
     return (res)
 
 
@@ -94,6 +93,6 @@ if __name__ == "__main__":
         sys.exit(1)
 
     board = new_board(int(sys.argv[1]))
-    solutions = recursive_func(board, 0, 0, [])
-    for sol in solutions:
+    res = recursive_func(board, 0, 0, [])
+    for sol in res:
         print(sol)
