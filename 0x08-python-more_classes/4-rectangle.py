@@ -65,11 +65,4 @@ class Rectangle:
 
     def __repr__(self):
         ''' return a string used by eval to make instances'''
-        new_str = ""
-        repr_str = "Rectangle("
-        for h in range(self.__height):
-            for w in range(self.__width):
-                new_str += "#"
-            if h != self.__height - 1:
-                new_str += "\n"
-        return repr_str + str(self.__width) + ", " + str(self.__height) + ")"
+        return "Rectangle({0}, {1})".format(self.__width, self.__height)
