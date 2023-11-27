@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Solves the N-queens puzzle"""
+'''The N queens puzzle'''
 
 import sys
 
 
-def init_board(n):
+def new_board(n):
     '''make new board of size nXn'''
     board = []
     [board.append([]) for i in range(n)]
@@ -94,7 +94,7 @@ if __name__ == "__main__":
         print("N must be at least 4")
         sys.exit(1)
 
-    board = init_board(int(sys.argv[1]))
+    board = new_board(int(sys.argv[1]))
     solutions = recursive_solve(board, 0, 0, [])
     for sol in solutions:
         print(sol)
