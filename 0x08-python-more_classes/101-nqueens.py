@@ -30,7 +30,7 @@ def get_result(a_board):
     return (result)
 
 
-def xout(board, row, col):
+def x_cells(board, row, col):
     '''x out cells of the board'''
     for c in range(col + 1, len(board)):
         board[row][c] = "x"
@@ -76,7 +76,7 @@ def recursive_solve(board, row, queens, solutions):
         if board[row][c] == " ":
             tmp_board = board_copy(board)
             tmp_board[row][c] = "Q"
-            xout(tmp_board, row, c)
+            x_cells(tmp_board, row, c)
             solutions = recursive_solve(tmp_board, row + 1,
                                         queens + 1, solutions)
 
