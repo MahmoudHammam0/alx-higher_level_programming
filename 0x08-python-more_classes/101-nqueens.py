@@ -12,11 +12,11 @@ def new_board(n):
     return (n_board)
 
 
-def board_copy(board):
+def board_copy(t_board):
     '''return a copy of the board'''
-    if isinstance(board, list):
-        return list(map(board_copy, board))
-    return (board)
+    if isinstance(t_board, list):
+        return list(map(board_copy, t_board))
+    return (t_board)
 
 
 def get_solution(board):
