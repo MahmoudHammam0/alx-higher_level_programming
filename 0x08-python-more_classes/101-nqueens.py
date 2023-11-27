@@ -66,21 +66,20 @@ def x_cells(x_board, row, col):
         c -= 1
 
 
-def recursive_func(board, row, queens, solutions):
+def recursive_func(r_board, row, q, res):
     '''solve n queens puzzle with recursion'''
-    if queens == len(board):
-        solutions.append(get_result(board))
-        return (solutions)
+    if q == len(r_board):
+        res.append(get_result(r_board))
+        return (res)
 
-    for c in range(len(board)):
-        if board[row][c] == " ":
-            tmp_board = board_copy(board)
+    for c in range(len(r_board)):
+        if r_board[row][c] == " ":
+            tmp_board = board_copy(r_board)
             tmp_board[row][c] = "Q"
             x_cells(tmp_board, row, c)
-            solutions = recursive_func(tmp_board, row + 1,
-                                       queens + 1, solutions)
+            res = recursive_func(tmp_board, row + 1, q + 1, res)
 
-    return (solutions)
+    return (res)
 
 
 if __name__ == "__main__":
