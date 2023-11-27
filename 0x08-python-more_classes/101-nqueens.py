@@ -24,7 +24,7 @@ def get_result(a_board):
     result = []
     for row in range(len(a_board)):
         for col in range(len(a_board)):
-            if board[row][col] == "Q":
+            if a_board[row][col] == "Q":
                 result.append([row, col])
                 break
     return (result)
