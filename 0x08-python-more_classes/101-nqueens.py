@@ -19,15 +19,15 @@ def board_copy(t_board):
     return (t_board)
 
 
-def get_result(board):
+def get_result(a_board):
     '''return solved board'''
-    solution = []
-    for r in range(len(board)):
-        for c in range(len(board)):
-            if board[r][c] == "Q":
-                solution.append([r, c])
+    result = []
+    for row in range(len(a_board)):
+        for col in range(len(a_board)):
+            if board[row][col] == "Q":
+                result.append([row, col])
                 break
-    return (solution)
+    return (result)
 
 
 def xout(board, row, col):
