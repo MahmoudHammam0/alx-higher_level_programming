@@ -78,7 +78,7 @@ def recursive_func(board, row, queens, solutions):
             tmp_board[row][c] = "Q"
             x_cells(tmp_board, row, c)
             solutions = recursive_func(tmp_board, row + 1,
-                                        queens + 1, solutions)
+                                       queens + 1, solutions)
 
     return (solutions)
 
