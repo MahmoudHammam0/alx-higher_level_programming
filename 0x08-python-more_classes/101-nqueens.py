@@ -6,10 +6,10 @@ import sys
 
 def new_board(n):
     '''make new board of size nXn'''
-    board = []
-    [board.append([]) for i in range(n)]
-    [row.append(' ') for i in range(n) for row in board]
-    return (board)
+    n_board = []
+    [n_board.append([]) for i in range(n)]
+    [row.append(' ') for i in range(n) for row in n_board]
+    return (n_board)
 
 
 def board_deepcopy(board):
