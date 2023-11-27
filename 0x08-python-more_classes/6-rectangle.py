@@ -9,6 +9,7 @@ module for class rectangle with width and height attributes
 class Rectangle:
     '''class rectangle with width and height attribute'''
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         '''initialization'''
         Rectangle.number_of_instances += 1
