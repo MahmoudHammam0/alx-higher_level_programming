@@ -12,10 +12,10 @@ def new_board(n):
     return (n_board)
 
 
-def board_deepcopy(board):
+def board_copy(board):
     '''return a copy of the board'''
     if isinstance(board, list):
-        return list(map(board_deepcopy, board))
+        return list(map(board_copy, board))
     return (board)
 
 
@@ -74,7 +74,7 @@ def recursive_solve(board, row, queens, solutions):
 
     for c in range(len(board)):
         if board[row][c] == " ":
-            tmp_board = board_deepcopy(board)
+            tmp_board = board_copy(board)
             tmp_board[row][c] = "Q"
             xout(tmp_board, row, c)
             solutions = recursive_solve(tmp_board, row + 1,
