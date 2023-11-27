@@ -66,7 +66,7 @@ def x_cells(x_board, row, col):
         c -= 1
 
 
-def recursive_solve(board, row, queens, solutions):
+def recursive_func(board, row, queens, solutions):
     '''solve n queens puzzle with recursion'''
     if queens == len(board):
         solutions.append(get_result(board))
@@ -77,7 +77,7 @@ def recursive_solve(board, row, queens, solutions):
             tmp_board = board_copy(board)
             tmp_board[row][c] = "Q"
             x_cells(tmp_board, row, c)
-            solutions = recursive_solve(tmp_board, row + 1,
+            solutions = recursive_func(tmp_board, row + 1,
                                         queens + 1, solutions)
 
     return (solutions)
@@ -95,6 +95,6 @@ if __name__ == "__main__":
         sys.exit(1)
 
     board = new_board(int(sys.argv[1]))
-    solutions = recursive_solve(board, 0, 0, [])
+    solutions = recursive_func(board, 0, 0, [])
     for sol in solutions:
         print(sol)
