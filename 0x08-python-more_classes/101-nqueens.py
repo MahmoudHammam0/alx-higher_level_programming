@@ -30,39 +30,39 @@ def get_result(a_board):
     return (result)
 
 
-def x_cells(board, row, col):
+def x_cells(x_board, row, col):
     '''x out cells of the board'''
-    for c in range(col + 1, len(board)):
-        board[row][c] = "x"
+    for c in range(col + 1, len(x_board)):
+        x_board[row][c] = "x"
     for c in range(col - 1, -1, -1):
-        board[row][c] = "x"
-    for r in range(row + 1, len(board)):
-        board[r][col] = "x"
+        x_board[row][c] = "x"
+    for r in range(row + 1, len(x_board)):
+        x_board[r][col] = "x"
     for r in range(row - 1, -1, -1):
-        board[r][col] = "x"
+        x_board[r][col] = "x"
     c = col + 1
-    for r in range(row + 1, len(board)):
-        if c >= len(board):
+    for r in range(row + 1, len(x_board)):
+        if c >= len(x_board):
             break
-        board[r][c] = "x"
+        x_board[r][c] = "x"
         c += 1
     c = col - 1
     for r in range(row - 1, -1, -1):
         if c < 0:
             break
-        board[r][c]
+        x_board[r][c]
         c -= 1
     c = col + 1
     for r in range(row - 1, -1, -1):
-        if c >= len(board):
+        if c >= len(x_board):
             break
-        board[r][c] = "x"
+        x_board[r][c] = "x"
         c += 1
     c = col - 1
-    for r in range(row + 1, len(board)):
+    for r in range(row + 1, len(x_board)):
         if c < 0:
             break
-        board[r][c] = "x"
+        x_board[r][c] = "x"
         c -= 1
 
 
