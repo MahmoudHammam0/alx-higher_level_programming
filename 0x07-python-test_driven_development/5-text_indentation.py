@@ -18,22 +18,19 @@ def text_indentation(text):
     Raises:
         TypeError: if text arg not a string
     '''
-    new_str = ""
     if type(text) is not str:
         raise TypeError('text must be a string')
-    for i in range(len(text)):
-        if text[i] in ['.', '?', ':']:
-            new_str += text[i] + "\n"
-            if i == len(text) - 1 or text[i + 1] != ' ':
-                new_str += "\n"
-            continue
-        if text[i] == ' ':
-            if i == 0 or text[i - 1] == "\n":
+    marker = 0
+    for char in text:
+        if marker == 0:
+            if char == ' ':
                 continue
-            if text[i - 1] in ['.', '?', ':']:
-                new_str += "\n"
-                continue
-            if text[i - 1] == ' ':
-                continue
-        new_str += text[i]
-    print(new_str, end='')
+            else:
+                marker = 1
+        if marker == 1:
+            if char == '.' or char == '?' or char == ':':
+                print(char)
+                print()
+                marker = 0
+            else:
+                print(char, end='')

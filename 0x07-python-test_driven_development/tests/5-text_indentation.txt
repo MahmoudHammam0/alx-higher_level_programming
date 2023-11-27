@@ -183,7 +183,7 @@ School
 
 >>> text_indentation(" \n this is a string. this is new line?")
 <BLANKLINE>
-this is a string.
+ this is a string.
 <BLANKLINE>
 this is new line?
 <BLANKLINE>
@@ -191,7 +191,7 @@ this is new line?
 
 >>> text_indentation("this is a string \n . this is new line?")
 this is a string 
-.
+ .
 <BLANKLINE>
 this is new line?
 <BLANKLINE>
