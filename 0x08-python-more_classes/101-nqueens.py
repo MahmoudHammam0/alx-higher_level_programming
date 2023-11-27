@@ -19,7 +19,7 @@ def board_copy(t_board):
     return (t_board)
 
 
-def get_solution(board):
+def get_result(board):
     '''return solved board'''
     solution = []
     for r in range(len(board)):
@@ -69,7 +69,7 @@ def xout(board, row, col):
 def recursive_solve(board, row, queens, solutions):
     '''solve n queens puzzle with recursion'''
     if queens == len(board):
-        solutions.append(get_solution(board))
+        solutions.append(get_result(board))
         return (solutions)
 
     for c in range(len(board)):
