@@ -1,4 +1,4 @@
-#!/usr/python3
+#!/usr/bin/python3
 '''
 
 module for add_integer function
