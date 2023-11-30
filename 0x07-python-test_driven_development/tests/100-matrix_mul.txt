@@ -50,17 +50,17 @@ Test case (Empty matrices):
 >>> matrix_mul([], [[1, 2]])
 Traceback (most recent call last):
 ...
-ValueError: m_a can't be empty
+ValueError: m_b can't be empty
 
 >>> matrix_mul([], [])
 Traceback (most recent call last):
 ...
-ValueError: m_b can't be empty
+ValueError: m_a can't be empty
 
 >>> matrix_mul([[1, 2]], [])
 Traceback (most recent call last):
 ...
-ValueError: m_b can't be empty
+ValueError: m_a can't be empty
 
 
 Test case (invalid args):
