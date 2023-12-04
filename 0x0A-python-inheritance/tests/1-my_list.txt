@@ -77,3 +77,12 @@ Test case (list of lists):
 >>> the_list.append(new_list2)
 >>> the_list
 [[-5, 4, 3], [2, -1]]
+
+
+Test case (floats):
+-------------------
+>>> the_list2 = MyList()
+>>> the_list2.append(2.5)
+>>> the_list2.append(-3.2)
+>>> the_list2.print_sorted()
+[-3.2, 2.5]
