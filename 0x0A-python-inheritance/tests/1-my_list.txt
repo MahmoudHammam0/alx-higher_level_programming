@@ -24,6 +24,14 @@ Test case (append ints):
 [1, 8, 4, 2]
 
 
+Test case (two args for method print_sorted):
+-----------------------------------------------
+>>> my_list.print_sorted([1, 2])
+Traceback (most recent call last):
+...
+TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+
 Test case (pop):
 -----------------
 >>> my_list.pop()
@@ -86,9 +94,3 @@ Test case (floats):
 >>> the_list2.append(-3.2)
 >>> the_list2.print_sorted()
 [-3.2, 2.5]
-
-
-Test case (sum):
-----------------
->>> new_list + new_list2
-[-5, 4, 3, 2, -1]
