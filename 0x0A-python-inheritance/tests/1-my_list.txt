@@ -39,3 +39,13 @@ Test case (insert):
 [5, 1, 8, 4]
 >>> my_list.print_sorted()
 [1, 4, 5, 8]
+
+
+Test case (append negative ints):
+----------------------------------
+>>> my_list.append(-3)
+>>> my_list.append(-5)
+>>> my_list
+[5, 1, 8, 4, -3, -5]
+>>> my_list.print_sorted()
+[-5, -3, 1, 4, 5, 8]
