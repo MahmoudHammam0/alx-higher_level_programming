@@ -86,3 +86,9 @@ Test case (floats):
 >>> the_list2.append(-3.2)
 >>> the_list2.print_sorted()
 [-3.2, 2.5]
+
+
+Test case (sum):
+----------------
+>>> new_list + new_list2
+[-5, 4, 3, 2, -1]
