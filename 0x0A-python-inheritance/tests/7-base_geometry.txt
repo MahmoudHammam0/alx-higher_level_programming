@@ -62,3 +62,8 @@ Exception: area() is not implemented
 Traceback (most recent call last):
 ...
 TypeError: tt must be an integer
+
+>>> bg.integer_validator("tt", {})
+Traceback (most recent call last):
+...
+TypeError: tt must be an integer
