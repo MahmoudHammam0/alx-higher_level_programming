@@ -20,7 +20,7 @@ Test case (append ints):
 >>> my_list.append(2)
 >>> my_list.print_sorted()
 [1, 2, 4, 8]
->>> print(my_list)
+>>> my_list
 [1, 8, 4, 2]
 
 
@@ -30,3 +30,12 @@ Test case (pop):
 2
 >>> my_list.print_sorted()
 [1, 4, 8]
+
+
+Test case (insert):
+--------------------
+>>> my_list.insert(0, 5)
+>>> my_list
+[5, 1, 8, 4]
+>>> my_list.print_sorted()
+[1, 4, 5, 8]
