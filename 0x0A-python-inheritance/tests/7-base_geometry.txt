@@ -90,3 +90,8 @@ TypeError: hh must be an integer
 Traceback (most recent call last):
 ...
 TypeError: mm must be an integer
+
+>>> bg.area(5)
+Traceback (most recent call last):
+...
+TypeError: area() takes 1 positional argument but 2 were given
