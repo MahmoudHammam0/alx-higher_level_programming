@@ -100,3 +100,8 @@ TypeError: area() takes 1 positional argument but 2 were given
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> bg.area(2, 3)
+Traceback (most recent call last):
+...
+TypeError: area() takes 1 positional argument but 3 were given
