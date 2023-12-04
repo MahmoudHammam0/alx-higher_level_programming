@@ -70,3 +70,8 @@ TypeError: tt must be an integer
 Traceback (most recent call last):
 ...
 TypeError: tt must be an integer
+
+>>> bg.integer_validator("hh", ())
+Traceback (most recent call last):
+...
+TypeError: hh must be an integer
