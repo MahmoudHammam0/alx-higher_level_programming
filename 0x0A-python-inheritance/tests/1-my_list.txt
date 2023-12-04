@@ -67,12 +67,13 @@ Test case (list of lists):
 ----------------------------
 >>> new_list = MyList()
 >>> new_list2 = MyList()
->>> new_list.append(5)
+>>> the_list = MyList()
+>>> new_list.append(-5)
 >>> new_list.append(4)
 >>> new_list.append(3)
 >>> new_list2.append(2)
->>> new_list2.append(1)
->>> my_list.append(new_list)
->>> my_list.append(new_list2)
->>> my_list
-[5, 1, 8, 4, -3, -5, [5, 4, 3], [2, 1]]
+>>> new_list2.append(-1)
+>>> the_list.append(new_list)
+>>> the_list.append(new_list2)
+>>> the_list
+[[-5, 4, 3], [2, -1]]
