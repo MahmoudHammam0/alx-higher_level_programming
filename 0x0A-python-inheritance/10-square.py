@@ -16,7 +16,3 @@ class Square(Rectangle):
     def area(self):
         '''calculate area of square'''
         return self.__size ** 2
-
-    def __str__(self):
-        '''inherited from rectangle'''
-        return super().__str__()
