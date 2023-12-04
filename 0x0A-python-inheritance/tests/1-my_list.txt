@@ -1,0 +1,32 @@
+The '1-my_list' test module
+=============================
+Using MyList class which inherits from class list
+---------------------------------------------------
+
+First import the module:
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+
+Test case (no args):
+---------------------
+>>> my_list
+[]
+
+Test case (append ints):
+------------------------
+>>> my_list.append(1)
+>>> my_list.append(8)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.print_sorted()
+[1, 2, 4, 8]
+>>> print(my_list)
+[1, 8, 4, 2]
+
+
+Test case (pop):
+-----------------
+>>> my_list.pop()
+2
+>>> my_list.print_sorted()
+[1, 4, 8]
