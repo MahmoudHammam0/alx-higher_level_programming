@@ -70,3 +70,11 @@ TypeError: tt must be an integer
 Traceback (most recent call last):
 ...
 TypeError: tt must be an integer
+
+
+Test case (more than 2 args):
+------------------------------
+>>> bg.integer_validator("name", 25, 30)
+Traceback (most recent call last):
+...
+
