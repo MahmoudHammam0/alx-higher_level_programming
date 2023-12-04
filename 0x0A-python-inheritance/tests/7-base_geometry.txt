@@ -80,3 +80,8 @@ TypeError: hh must be an integer
 Traceback (most recent call last):
 ...
 TypeError: hh must be an integer
+
+>>> bg.integer_validator('hh', True)
+Traceback (most recent call last):
+...
+TypeError: hh must be an integer
