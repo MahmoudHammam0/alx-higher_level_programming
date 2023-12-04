@@ -31,6 +31,9 @@ Test case (valid args):
 >>> bg.integer_validator("five", 5000)
 
 
+>>> bg.integer_validator(20, 20)
+
+
 Test case (invalid args):
 --------------------------
 >>> bg.integer_validator("int", 0)
