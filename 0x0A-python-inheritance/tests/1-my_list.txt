@@ -95,7 +95,7 @@ Test case (type):
 True
 
 
-Test case (sort list):
+Test case (sort empty list):
 ----------------------
 >>> new_list = MyList()
 >>> new_list.print_sorted()
