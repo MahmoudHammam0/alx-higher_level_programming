@@ -13,14 +13,14 @@ if __name__ == "__main__":
     import sys
 
     size = 0
-    status_codes = {}
+    status = {}
     codes = ['200', '301', '400', '401', '403', '404', '405', '500']
     num = 0
 
     try:
         for line in sys.stdin:
             if num == 10:
-                status_printed(size, status_codes)
+                status_printed(size, status)
                 num = 1
             else:
                 num += 1
@@ -31,13 +31,13 @@ if __name__ == "__main__":
                 pass
             try:
                 if line[-2] in codes:
-                    if status_codes.get(line[-2], -1) == -1:
-                        status_codes[line[-2]] = 1
+                    if status.get(line[-2], -1) == -1:
+                        status[line[-2]] = 1
                     else:
-                        status_codes[line[-2]] += 1
+                        status[line[-2]] += 1
             except IndexError:
                 pass
-        status_printed(size, status_codes)
+        status_printed(size, status)
     except KeyboardInterrupt:
-        status_printed(size, status_codes)
+        status_printed(size, status)
         raise
