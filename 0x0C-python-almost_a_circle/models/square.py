@@ -32,10 +32,7 @@ class Square(Rectangle):
         '''update values of class attributes'''
         for i in range(len(args)):
             if i == 0:
-                if args[i] == None:
-                    continue
-                else:
-                    self.id = args[i]
+                self.id = args[i]
             elif i == 1:
                 self.size = args[i]
             elif i == 2:
@@ -45,10 +42,7 @@ class Square(Rectangle):
         if len(args) == 0:
             for key, value in kwargs.items():
                 if key == 'id':
-                    if value == None:
-                        continue
-                    else:
-                        self.id = value
+                    self.id = value
                 elif key == 'size':
                     self.size = value
                 elif key == 'x':
