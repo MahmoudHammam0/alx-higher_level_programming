@@ -86,7 +86,39 @@ class Rectangle(Base):
 
     def __str__(self):
         '''overrides the str method'''
-        return "[Rectangle] {} {}/{} - {}/{}".format(self.id, self.__x,
-                                                     self.__y,
-                                                     self.__width,
-                                                     self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
+                                                       self.__y,
+                                                       self.__width,
+                                                       self.__height)
+
+    def update(self, *args, **kwargs):
+        '''update values of attributes of Rectangle class'''
+        for i in range(len(args)):
+            if i == 0:
+                if args[i] == None:
+                    continue
+                else:
+                    self.id = args[i]
+            elif i == 1:
+                self.__width = args[i]
+            elif i == 2:
+                self.__height = args[i]
+            elif i == 3:
+                self.__x = args[i]
+            elif i == 4:
+                self.__y = args[i]
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                if key == 'id':
+                    if value == None:
+                        continue
+                    else:
+                        self.id = value
+                elif key == 'width':
+                    self.__width = value
+                elif key == 'height':
+                    self.__height = value
+                elif key == 'x':
+                    self.__x = value
+                elif key == 'y':
+                    self.__y = value
