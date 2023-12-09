@@ -95,7 +95,7 @@ class Rectangle(Base):
         '''update values of attributes of Rectangle class'''
         for i in range(len(args)):
             if i == 0:
-                if args[i] == None:
+                if args[i] is None:
                     continue
                 else:
                     self.id = args[i]
@@ -110,7 +110,7 @@ class Rectangle(Base):
         if len(args) == 0:
             for key, value in kwargs.items():
                 if key == 'id':
-                    if value == None:
+                    if value is None:
                         continue
                     else:
                         self.id = value
