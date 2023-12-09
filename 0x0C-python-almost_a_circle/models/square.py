@@ -54,3 +54,9 @@ class Square(Rectangle):
         '''overrides the Rectangle str method'''
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.size)
+
+    def to_dictionary(self):
+        '''returns a dictionary representation of Square'''
+        the_dict = {'id': self.id, 'x': self.x,
+                    'size': self.__size, 'y': self.y}
+        return the_dict
