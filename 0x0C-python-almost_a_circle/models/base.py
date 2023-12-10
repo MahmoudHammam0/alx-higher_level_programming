@@ -35,3 +35,10 @@ class Base:
             content = Base.to_json_string(x)
         with open(filename, mode='w', encoding='UTF8') as my_file:
             my_file.write(content)
+
+    @staticmethod
+    def from_json_string(json_string):
+        '''returns the list of the JSON string representation'''
+        if json_string is None or json_string == []:
+            return []
+        return json.loads(json_string)
