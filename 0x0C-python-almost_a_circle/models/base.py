@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Base class module'''
 import json
+import csv
 
 
 class Base:
@@ -72,7 +73,7 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         '''save serialized list_objs to a csv file'''
         filename = "{}.csv".format(cls.__name__)
-        with open(filename, "w", newline="") as my_file:
+        with open(filename, mode="w", newline="") as my_file:
             if list_objs is None or list_objs == []:
                 my_file.write("[]")
             else:
@@ -89,7 +90,7 @@ class Base:
         '''load deserializes list_objs to a csv file'''
         filename = "{}.csv".format(cls.__name__)
         try:
-            with open(filename, "r", newline="") as my_file:
+            with open(filename, mode="r", newline="") as my_file:
                 if cls.__name__ == "Rectangle":
                     fieldnames = ["id", "width", "height", "x", "y"]
                 else:
