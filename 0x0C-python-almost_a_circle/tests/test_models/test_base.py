@@ -62,3 +62,6 @@ class TestBase(unittest.TestCase):
         '''test Base with tuple'''
         v = Base((2, 5))
         self.assertEqual(v.id, (2, 5))
+
+if __name__ == '__main__':
+    unittest.main()

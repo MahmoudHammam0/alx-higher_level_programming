@@ -131,3 +131,6 @@ class TestRectangle(unittest.TestCase):
     def test_subclass(self):
         '''check if the Rectangle is subclass of Base'''
         self.assertTrue(issubclass(Rectangle, Base))
+
+if __name__ == '__main__':
+    unittest.main()

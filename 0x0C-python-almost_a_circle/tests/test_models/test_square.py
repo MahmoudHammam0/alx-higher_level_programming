@@ -48,3 +48,6 @@ class TestSquare(unittest.TestCase):
         s = "[Square] (120) 5/9 - 3"
         x = str(s1)
         self.assertEqual(x, s)
+
+if __name__ == '__main__':
+    unittest.main()
