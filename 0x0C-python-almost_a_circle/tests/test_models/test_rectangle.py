@@ -132,5 +132,13 @@ class TestRectangle(unittest.TestCase):
         '''check if the Rectangle is subclass of Base'''
         self.assertTrue(issubclass(Rectangle, Base))
 
+    def test_to_dictionary(self):
+        '''test Rectangle method to_dictionary'''
+        r1 = Rectangle(5, 7, 1, 3, 10)
+        r1_dict = r1.to_dictionary()
+        x = {'x': 1, 'y': 3, 'id': 10, 'height': 7, 'width': 5}
+        self.assertEqual(r1_dict, x)
+        self.assertTrue(type(r1_dict) is dict)
+
 if __name__ == '__main__':
     unittest.main()
