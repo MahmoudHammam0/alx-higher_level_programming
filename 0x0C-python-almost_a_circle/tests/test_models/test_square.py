@@ -49,5 +49,15 @@ class TestSquare(unittest.TestCase):
         x = str(s1)
         self.assertEqual(x, s)
 
+    def test_square_size(self):
+        '''test attribute size of Square class'''
+        s1 = Square(8, 5, 3, 4)
+        self.assertEqual(s1.size, 8)
+        self.assertRaises(TypeError, Square, "h")
+        self.assertRaises(TypeError, Square, (1, 1))
+        self.assertRaises(TypeError, Square, {})
+        self.assertRaises(ValueError, Square, -20)
+        self.assertRaises(TypeError, Square, 2.5)
+
 if __name__ == '__main__':
     unittest.main()
