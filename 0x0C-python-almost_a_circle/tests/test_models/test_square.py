@@ -73,5 +73,15 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s1.x, 2)
         self.assertEqual(s1.y, 3)
 
+    def test_square_update_kwargs(self):
+        '''test square class with keyworded args'''
+        s1 = Square(5)
+        up = {"y": 6, "id": 20, "x": 5, "size": 7}
+        s1.update(**up)
+        self.assertEqual(s1.id, 20)
+        self.assertEqual(s1.x, 5)
+        self.assertEqual(s1.y, 6)
+        self.assertEqual(s1.size, 7)
+
 if __name__ == '__main__':
     unittest.main()
