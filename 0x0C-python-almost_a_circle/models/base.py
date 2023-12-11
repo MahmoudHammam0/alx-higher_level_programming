@@ -33,7 +33,7 @@ class Base:
             for obj in list_objs:
                 x.append(obj.to_dictionary())
             content = Base.to_json_string(x)
-        with open(filename, mode='w', encoding='UTF8') as my_file:
+        with open(filename, mode='w') as my_file:
             my_file.write(content)
 
     @staticmethod
