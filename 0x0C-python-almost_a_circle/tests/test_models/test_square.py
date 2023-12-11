@@ -61,6 +61,7 @@ class TestSquare(unittest.TestCase):
         self.assertRaises(TypeError, Square, {'a', 'b'})
         self.assertRaises(TypeError, Square, [])
         self.assertEqual(s1.size, s1.width)
+        self.assertEqual(s1.size, s1.height)
 
 if __name__ == '__main__':
     unittest.main()
