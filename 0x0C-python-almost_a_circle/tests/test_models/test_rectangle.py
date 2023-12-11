@@ -127,6 +127,7 @@ class TestRectangle(unittest.TestCase):
         w = "[Rectangle] (89) 2/3 - 1/5"
         m = str(r1)
         self.assertEqual(m, w)
+
     def test_subclass(self):
         '''check if the Rectangle is subclass of Base'''
         self.assertTrue(issubclass(Rectangle, Base))
