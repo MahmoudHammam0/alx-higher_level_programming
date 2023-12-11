@@ -87,7 +87,7 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        '''load deserializes list_objs to a csv file'''
+        '''load deserializes list_objs from a csv file'''
         filename = "{}.csv".format(cls.__name__)
         try:
             with open(filename, mode="r", newline="") as my_file:
