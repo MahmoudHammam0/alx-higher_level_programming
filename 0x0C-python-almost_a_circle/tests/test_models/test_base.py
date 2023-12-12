@@ -2,6 +2,7 @@
 '''unittest module for base.py'''
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
@@ -62,6 +63,16 @@ class TestBase(unittest.TestCase):
         '''test Base with tuple'''
         v = Base((2, 5))
         self.assertEqual(v.id, (2, 5))
+
+    def test_to_json_string_method(self):
+        '''test Base class method to_json_string'''
+        x = [{'c': 0}, {'d': 5}]
+        self.assertEqual(Base.to_json_string(x), '[{"c": 0}, {"d": 5}]')
+
+    def test_from_json_string_method(self):
+        '''test Base class method from_json_string'''
+        x = Base.from_json_string('[{"h": 1}, {"m": 0}]')
+        self.assertEqual(x, [{'h': 1}, {'m': 0}])
 
 if __name__ == '__main__':
     unittest.main()
