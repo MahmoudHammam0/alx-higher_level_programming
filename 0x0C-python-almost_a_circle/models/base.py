@@ -133,5 +133,5 @@ class Base:
                 t.left(90)
                 t.forward(s1.height)
                 t.left(90)
-             t.hideturtle()
-          turtle.exitonclick()
+            t.hideturtle()
+        turtle.exitonclick()
