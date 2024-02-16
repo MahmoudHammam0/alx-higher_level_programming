@@ -23,7 +23,7 @@ if __name__ == "__main__":
             for city in states[i]:
                 res += city
             if (i != len(states) - 1):
-                res += ','
+                res += ', '
         print(res)
     cr.close()
     con.close()
