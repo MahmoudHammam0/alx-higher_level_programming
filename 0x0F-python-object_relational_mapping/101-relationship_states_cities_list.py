@@ -13,7 +13,7 @@ if __name__ == '__main__':
                            format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state in session.query(State).order_by(State.id):
+    for state in session.query(State).join('cities').order_by(State.id, City.id):
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("\t{}: {}".format(city.id, city.name))
