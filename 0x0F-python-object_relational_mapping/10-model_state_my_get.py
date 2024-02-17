@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''First state via SQLAlchemy module'''
+'''Get a state via SQLAlchemy module'''
 import sqlalchemy
 import sys
 from sqlalchemy.orm import sessionmaker
