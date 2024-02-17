@@ -12,5 +12,8 @@ if __name__ == '__main__':
                            format(sys.argv[1], sys.argv[2], sys.argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state in session.query(State).filter(State.id == '1'):
+    state = session.query(State).first()
+    if (state == None):
+        print()
+    else:
         print("{}: {}".format(state.id, state.name))
