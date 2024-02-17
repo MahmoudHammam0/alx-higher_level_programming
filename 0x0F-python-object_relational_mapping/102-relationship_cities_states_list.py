@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''City relationship via SQLAlchemy module'''
+'''From City via SQLAlchemy module'''
 import sqlalchemy
 import sys
 from sqlalchemy.orm import sessionmaker
