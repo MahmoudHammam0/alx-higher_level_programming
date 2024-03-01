@@ -13,7 +13,9 @@ if __name__ == "__main__":
                }
     req = requests.get(url, headers=headers)
     content = req.json()
-    if len(content) >= 10:
+    try:
         for i in range(10):
             print("{}: {}".format(content[i].get("sha"),
                   content[i].get("commit").get("author").get("name")))
+    except IndexError:
+        pass
