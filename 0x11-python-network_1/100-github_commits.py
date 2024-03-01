@@ -12,7 +12,7 @@ if __name__ == "__main__":
                "X-GitHub-Api-Version": "2022-11-28"
                }
     req = requests.get(url, headers=headers)
-    content = req.json()[:10]
+    content = req.json()
     for i in range(10):
         print("{}: {}".format(content[i].get("sha"),
               content[i].get("commit").get("author").get("name")))
