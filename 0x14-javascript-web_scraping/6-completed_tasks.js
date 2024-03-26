@@ -9,6 +9,7 @@ request.get(url, (error, response, body) => {
   const res = {};
   if (error) {
     console.log(error);
+    return;
   }
   for (const task of list) {
     if (!(task.userId in res)) {
