@@ -3,21 +3,21 @@
 const request = require('request');
 const process = require('process');
 const url = process.argv[2];
+const charId = '18';
 let count = 0;
-request(url, function (error, response, body) {
+
+request.get(url, (error, response, body) => {
   if (error) {
-    console.log('error:', error);
+    console.log(error);
   } else {
     const results = JSON.parse(body).results;
-    const charId = 'https://swapi-api.alx-tools.com/api/people/18/';
-    for (const result of results) {
-      for (const character of result.characters) {
-        if (character === charId) {
+    results.forEach((movie) => {
+      movie.characters.forEach((character) => {
+        if (character.includes(charId)) {
           count++;
-          break;
         }
-      }
-    }
+      });
+    });
     console.log(count);
   }
 });
