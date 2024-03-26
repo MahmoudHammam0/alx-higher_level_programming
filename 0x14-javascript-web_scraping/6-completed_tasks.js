@@ -11,14 +11,14 @@ request.get(url, (error, response, body) => {
     console.log(error);
   } else {
     list.forEach((task) => {
-    if (task.completed) {
-      if (!res[task.userId]) {
-        res[task.userId] = 1;
-      } else {
-        res[task.userId]++;
+      if (task.completed) {
+        if (!res[task.userId]) {
+          res[task.userId] = 1;
+        } else {
+          res[task.userId]++;
+        }
       }
-    }
-  });
-  console.log(res);
+    });
+    console.log(res);
   }
 });
