@@ -13,12 +13,12 @@ request.get(url, (error, response, body) => {
   }
   for (const task of list) {
     if (!(task.userId in res)) {
-      if (task.completed === true) {
+      if (task.completed) {
         res[task.userId] = 1;
       } else {
         res[task.userId] = 0;
       }
-    } else if (task.userId in res && task.completed === true) {
+    } else if (task.userId in res && task.completed) {
       res[task.userId]++;
     }
   }
