@@ -10,11 +10,14 @@ request(url, function (error, response, body) {
   } else {
     const results = JSON.parse(body).results;
     const charId = 'https://swapi-api.alx-tools.com/api/people/18/';
-    results.forEach(results => {
-      if (results.characters.includes(charId)) {
-        count++;
+    for (const result of results) {
+      for (const character of result.characters) {
+        if (character === charId) {
+          count++;
+          break;
+        }
       }
-    });
+    }
     console.log(count);
   }
 });
