@@ -9,18 +9,16 @@ request.get(url, (error, response, body) => {
   const res = {};
   if (error) {
     console.log(error);
-    return;
-  }
-  for (const task of list) {
-    if (!(task.userId in res)) {
-      if (task.completed) {
+  } else {
+    list.forEach((task) => {
+    if (task.completed) {
+      if (!res[task.userId]) {
         res[task.userId] = 1;
       } else {
-        res[task.userId] = 0;
+        res[task.userId]++;
       }
-    } else if (task.userId in res && task.completed) {
-      res[task.userId]++;
     }
-  }
+  });
   console.log(res);
+  }
 });
